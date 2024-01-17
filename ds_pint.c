@@ -5,6 +5,7 @@
  * @count: line_number
  * Return: nothing
 */
+
 void ds_pint(stack_t **head, unsigned int count)
 {
 	if (*head == NULL)

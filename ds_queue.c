@@ -5,6 +5,7 @@
  * @count: line_number
  * Return: nothing
 */
+
 void ds_queue(stack_t **head, unsigned int count)
 {
 	(void)head;
@@ -18,11 +19,12 @@ void ds_queue(stack_t **head, unsigned int count)
  * @head: head of the stack
  * Return: nothing
 */
+
 void addqueue(stack_t **head, int n)
 {
-	stack_t *new_node, *aux;
+	stack_t *new_node, *output;
 
-	aux = *head;
+	output = *head;
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{
@@ -30,19 +32,19 @@ void addqueue(stack_t **head, int n)
 	}
 	new_node->num = n;
 	new_node->next = NULL;
-	if (aux)
+	if (output)
 	{
-		while (aux->next)
-			aux = aux->next;
+		while (output->next)
+			output = output->next;
 	}
-	if (!aux)
+	if (!output)
 	{
 		*head = new_node;
 		new_node->prev = NULL;
 	}
 	else
 	{
-		aux->next = new_node;
-		new_node->prev = aux;
+		output->next = new_node;
+		new_node->prev = output;
 	}
 }

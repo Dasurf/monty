@@ -6,6 +6,7 @@
  * @count: line_number
  * Return: nothing
 */
+
 void ds_pchar(stack_t **head, unsigned int count)
 {
 	stack_t *h;
@@ -19,7 +20,7 @@ void ds_pchar(stack_t **head, unsigned int count)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	if (h->num > 127 || h->num < 0)
+	if (h->num < 0 || h->num > 127)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", count);
 		fclose(bus.file);

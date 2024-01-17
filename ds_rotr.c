@@ -5,12 +5,13 @@
   *@count: line_number
   *Return: nothing
  */
+
 void ds_rotr(stack_t **head, __attribute__((unused)) unsigned int count)
 {
 	stack_t *copy;
 
 	copy = *head;
-	if (*head == NULL || (*head)->next == NULL)
+	if ((*head)->next == NULL || *head == NULL)
 	{
 		return;
 	}

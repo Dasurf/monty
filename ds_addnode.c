@@ -17,14 +17,9 @@ void addnode(stack_t **head, int n)
 	{ printf("Error\n");
 		exit(0); }
 	if (aux)
-	{
 		aux->prev = new_node;
-	}
-	else
-	{
-		new_node->num = n;
-		new_node->next = *head;
-		new_node->prev = NULL;
-		*head = new_node;
-	}
+	new_node->num = n;
+	new_node->next = *head;
+	new_node->prev = NULL;
+	*head = new_node;
 }

@@ -5,6 +5,7 @@
  * @count: line_number
  * Return: nothing
 */
+
 void ds_push(stack_t **head, unsigned int count)
 {
 	int n, j = 0, flag = 0;
@@ -15,7 +16,7 @@ void ds_push(stack_t **head, unsigned int count)
 			j++;
 		for (; bus.arg[j] != '\0'; j++)
 		{
-			if (bus.arg[j] > 57 || bus.arg[j] < 48)
+			if (bus.arg[j] < 48 || bus.arg[j] > 57)
 				flag = 1; }
 		if (flag == 1)
 		{ fprintf(stderr, "L%d: usage: push integer\n", count);

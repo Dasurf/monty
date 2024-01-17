@@ -5,6 +5,7 @@
  * @count: line_number
  * Return: nothing
 */
+
 void ds_pop(stack_t **head, unsigned int count)
 {
 	stack_t *h;

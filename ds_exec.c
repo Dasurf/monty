@@ -31,13 +31,14 @@ int execute(char *content, stack_t **stack, unsigned int count, FILE *file)
 	char *op;
 
 	op = strtok(content, " \n\t");
-	if (op && op[0] == '#')
+	if (op && (op[0] == '#'))
 		return (0);
 	bus.arg = strtok(NULL, " \n\t");
 	while (opst[i].opcode && op)
 	{
 		if (strcmp(op, opst[i].opcode) == 0)
-		{	opst[i].f(stack, count);
+		{
+			opst[i].f(stack, count);
 			return (0);
 		}
 		i++;

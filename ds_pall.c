@@ -5,6 +5,7 @@
  * @count: no used
  * Return: nothing
 */
+
 void ds_pall(stack_t **head, unsigned int count)
 {
 	stack_t *h;

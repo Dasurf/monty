@@ -7,12 +7,12 @@
  */
 void ds_sub(stack_t **head, unsigned int count)
 {
-	stack_t *aux;
+	stack_t *output;
 	int sus, nodes;
 
-	aux = *head;
-	for (nodes = 0; aux != NULL; nodes++)
-		aux = aux->next;
+	output = *head;
+	for (nodes = 0; output != NULL; nodes++)
+		output = output->next;
 	if (nodes < 2)
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n", count);
@@ -21,9 +21,9 @@ void ds_sub(stack_t **head, unsigned int count)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	aux = *head;
-	sus = aux->next->num - aux->num;
-	aux->next->num = sus;
-	*head = aux->next;
-	free(aux);
+	output = *head;
+	sus = output->next->num - output->num;
+	output->next->num = sus;
+	*head = output->next;
+	free(output);
 }

@@ -7,14 +7,14 @@
  */
 void ds_rotl(stack_t **head,  __attribute__((unused)) unsigned int count)
 {
-	stack_t *tmp = *head, *aux;
+	stack_t *tmp = *head, *output;
 
-	if (*head == NULL || (*head)->next == NULL)
+	if ((*head)->next == NULL || *head == NULL)
 	{
 		return;
 	}
-	aux = (*head)->next;
-	aux->prev = NULL;
+	output = (*head)->next;
+	output->prev = NULL;
 	while (tmp->next != NULL)
 	{
 		tmp = tmp->next;
@@ -22,5 +22,5 @@ void ds_rotl(stack_t **head,  __attribute__((unused)) unsigned int count)
 	tmp->next = *head;
 	(*head)->next = NULL;
 	(*head)->prev = tmp;
-	(*head) = aux;
+	(*head) = output;
 }

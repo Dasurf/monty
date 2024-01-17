@@ -9,7 +9,7 @@
 void ds_mod(stack_t **head, unsigned int count)
 {
 	stack_t *h;
-	int len = 0, aux;
+	int len = 0, output;
 
 	h = *head;
 	while (h)
@@ -34,8 +34,8 @@ void ds_mod(stack_t **head, unsigned int count)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	aux = h->next->num % h->num;
-	h->next->num = aux;
+	output = h->next->num % h->num;
+	h->next->num = output;
 	*head = h->next;
 	free(h);
 }

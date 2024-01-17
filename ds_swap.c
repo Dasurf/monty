@@ -8,7 +8,7 @@
 void ds_swap(stack_t **head, unsigned int count)
 {
 	stack_t *h;
-	int len = 0, aux;
+	int len = 0, output;
 
 	h = *head;
 	while (h)
@@ -25,7 +25,7 @@ void ds_swap(stack_t **head, unsigned int count)
 		exit(EXIT_FAILURE);
 	}
 	h = *head;
-	aux = h->num;
+	output = h->num;
 	h->num = h->next->num;
-	h->next->num = aux;
+	h->next->num = output;
 }
