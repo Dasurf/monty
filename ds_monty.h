@@ -60,7 +60,7 @@ typedef struct instruction_s
 
 
 void ds_push(stack_t **head, unsigned int number);
-void ds_pall(stack_t **head, unsigned int number);
+void ds_pall(stack_t **head, unsigned int count);
 void ds_pint(stack_t **head, unsigned int number);
 int execute(char *content, stack_t **head, unsigned int count, FILE *file);
 void free_stack(stack_t *head);
